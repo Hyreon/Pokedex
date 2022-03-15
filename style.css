@@ -1,0 +1,13 @@
+/* CSS styles */
+table.pokedex-table {table-layout:fixed;}/*Setting the table width is important!*/
+td {
+  height: 260px;
+  vertical-align: top;
+  text-align: center;
+}
+table, th {
+	border: 1px solid black;
+}
+td {
+	border: 1px solid;
+}

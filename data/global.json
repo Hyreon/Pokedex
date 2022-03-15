@@ -1,0 +1,43 @@
+{
+  "encounter-conditions": {
+    "IMPOSSIBLE": ["slot2-ruby", "slot2-sapphire", "slot2-emerald",
+    "slot2-firered", "slot2-leafgreen"],
+    "UNCOMMON": ["swarm-yes"]
+  },
+  "encounter-types": {
+    "EPIC": ["gift", "gift-egg", "only-one", "pokeflute", "squirt-bottle",
+      "wailmer-pail"]
+  },
+  "evolution-triggers": {
+    "IMPOSSIBLE": ["trade"],
+    "COMMON": ["shed"],
+    "BASIC": ["level-up", "use-item"]
+  },
+  "locations": {
+    "UNCOMMON": ["kanto-safari-zone", "hoenn-safari-zone", "great-marsh"]
+  },
+  "crafting": {
+    "omanyte": ["helix-fossil"],
+    "kabuto": ["dome-fossil"],
+    "aerodactyl": ["old-amber"],
+    "lileep": ["root-fossil"],
+    "anorith": ["claw-fossil"],
+    "cranidos": ["skull-fossil"],
+    "bastiodon": ["armor-fossil"],
+    "tirtouga": ["cover-fossil"],
+    "archen": ["plume-fossil"],
+    "tyrunt": ["jaw-fossil"],
+    "amaura": ["sail-fossil"],
+    "dracozolt": ["fossilized-bird", "fossilized-drake"],
+    "arctozolt": ["fossilized-bird", "fossilized-dino"],
+    "dracovish": ["fossilized-fish", "fossilized-drake"],
+    "arctovish": ["fossilized-fish", "fossilized-dino"]
+  },
+  "no-data": [],
+  "natural-event": [],
+  "giveaways": [],
+  "external": {},
+  "exclusive-pokemon": {},
+  "unlisted-encounters": {},
+  "breeding": true
+}

@@ -1,0 +1,110 @@
+{
+  "items": {
+    "single": {
+      "rarity": "EPIC",
+      "source": "World",
+      "list": ["lax-incense", "luck-incense", "odd-incense", "odd-keystone"],
+      "easy": true
+    },
+    "pickup-very-rare": {
+      "rarity": "RARE",
+      "source": "Very Rare Pickup",
+      "list": ["kings-rock"]
+    },
+    "pickup-uncommon": {
+      "rarity": "RARE",
+      "source": "Uncommon Pickup",
+      "list": ["dawn-stone", "shiny-stone", "dusk-stone"]
+    },
+    "hold-rare": {
+      "rarity": "RARE",
+      "source": "Rare Held Item",
+      "list": ["lucky-egg"]
+    },
+    "hold-common": {
+      "rarity": "UNCOMMON",
+      "source": "Common Held Item",
+      "list": ["razor-claw"]
+    },
+    "mining-very-rare": {
+      "rarity": "RARE",
+      "source": "Very Rare Excavation",
+      "list": ["helix-fossil", "claw-fossil"]
+    },
+    "mining-rare": {
+      "rarity": "RARE",
+      "source": "Rare Excavation",
+      "list": ["fire-stone", "sun-stone", "thunder-stone", "old-amber"]
+    },
+    "mining-uncommon": {
+      "rarity": "UNCOMMON",
+      "source": "Uncommon Excavation",
+      "list": ["moon-stone", "water-stone", "leaf-stone", "armor-fossil", "root-fossil", "dome-fossil"]
+    }
+  },
+  "no-data": [],
+  "natural-event": [],
+  "giveaways": ["mew", "celebi", "jirachi", "deoxys", "manaphy", "darkrai", "shaymin", "arceus", "pichu"],
+  "external": {
+    "ranch-boost": {
+      "rarity": "MYTHICAL",
+      "label": "Send 999 Pokémon to My Pokémon Ranch",
+      "list": ["mew"]
+    },
+    "ranger-egg": {
+      "rarity": "MYTHICAL",
+      "manaphy": "Transfer Pokemon Egg from Pokémon Ranger",
+      "list": ["manaphy"]
+    }
+  },
+  "exclusive-pokemon": {
+    "STARTER": ["piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "turtwig", "grotle", "torterra"]
+  },
+  "unlisted-encounters": {
+    "roaming-legendary": {
+      "rarity": "EPIC",
+      "label": "Roaming legendary",
+      "list": ["mesprit", "cresselia"]
+    },
+    "legendary": {
+      "rarity": "EPIC",
+      "label": "Legendary Encounter",
+      "list": ["rotom", "uxie", "azelf", "palkia", "giratina", "heatran"]
+    },
+    "keystone-chat": {
+      "rarity": "IMPOSSIBLE",
+      "label": "Hallowed tower after 32 underground chats",
+      "list": ["spiritomb"]
+    },
+    "random-single-fish-tile": {
+      "rarity": "RARE",
+      "label": "Fishing at exact, random tiles",
+      "list": ["feebas"]
+    },
+    "honey-tree-c": {
+      "rarity": "RARE",
+      "label": "Tree munchlax",
+      "list": ["munchlax"]
+    },
+    "honey-tree-b": {
+      "rarity": "UNCOMMON",
+      "label": "Uncommon honey tree",
+      "list": ["combee", "burmy", "cherubi", "aipom", "heracross", "wurmple"]
+    },
+    "honey-tree-a": {
+      "rarity": "UNCOMMON",
+      "label": "Common honey tree",
+      "list": ["wurmple", "cascoon", "combee", "burmy", "cherubi", "aipom"]
+    },
+    "trophy-garden": {
+      "rarity": "UNCOMMON",
+      "label": "Visits the Trophy Garden*",
+      "list": ["clefairy", "jigglypuff", "meowth", "eevee", "porygon", "cleffa", "igglybuff", "marill", "azurill", "plusle", "minun", "castform", "bonsly", "mime jr.", "happiny"]
+    },
+    "random-marsh": {
+      "rarity": "UNCOMMON",
+      "label": "Great Marsh binoculars",
+      "list": ["golduck", "roselia", "staravia", "skorupi", "croagunk", "carnivine", "paras", "exeggcute", "kangaskhan", "yanma", "shroomish", "gulpin", "drapion", "toxicroak"]
+    }
+  }
+}
