@@ -1,0 +1,29 @@
+{
+  "items": {
+    "fossil-choice": {
+      "rarity": "EXOTIC",
+      "source": "Fossil choice",
+      "list": ["helix-fossil", "dome-fossil"]
+    }
+  },
+  "no-data": [],
+  "natural-event": ["lugia", "ho-oh", "deoxys"],
+  "giveaways": [],
+  "external": {},
+  "exclusive-pokemon": {
+    "STARTER": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise"],
+	"REVIVED-BEASTS": ["entei", "suicune", "raikou"]
+  },
+  "unlisted-encounters": {
+	"game-corner": {
+      "rarity": "EPIC",
+      "label": "Game corner prize",
+      "list": ["abra", "clefairy", "dratini", "pinsir", "porygon"]
+    },
+	"trade": {
+      "rarity": "EPIC",
+      "label": "Trade",
+      "list": ["mr. mime", "nidoran-m", "nidorino", "lickitung", "jynx", "farfetch'd", "seel", "electrode", "tangela"]
+	}
+  }
+}

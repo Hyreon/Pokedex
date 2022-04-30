@@ -26,6 +26,11 @@
       "source": "Common Held Item",
       "list": ["razor-claw"]
     },
+    "mining-sometimes-never": {
+      "rarity": "EXOTIC",
+      "source": "ID-Based Excavation",
+      "list": ["armor-fossil", "skull-fossil"]
+    },
     "mining-very-rare": {
       "rarity": "RARE",
       "source": "Very Rare Excavation",
@@ -39,7 +44,7 @@
     "mining-uncommon": {
       "rarity": "UNCOMMON",
       "source": "Uncommon Excavation",
-      "list": ["moon-stone", "water-stone", "leaf-stone", "armor-fossil", "root-fossil", "dome-fossil"]
+      "list": ["moon-stone", "water-stone", "leaf-stone", "root-fossil", "dome-fossil"]
     }
   },
   "no-data": [],
@@ -58,7 +63,8 @@
     }
   },
   "exclusive-pokemon": {
-    "STARTER": ["piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "turtwig", "grotle", "torterra"]
+    "STARTER": ["piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "turtwig", "grotle", "torterra"],
+    "FOSSIL": ["cranidos", "rampardos", "shieldon", "bastiodon"]
   },
   "unlisted-encounters": {
     "roaming-legendary": {

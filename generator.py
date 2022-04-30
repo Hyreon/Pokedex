@@ -61,7 +61,7 @@ simple_evolution_triggers = ['level-up', 'use-item']
 species_counts = {
     'generation-i': [151, 78],
     'generation-ii': [251, 129],
-    'generation-iii': [387, 202],
+    'generation-iii': [386, 202],
     'generation-iv': [493, 254],
     'generation-v': [649, 336],
     'generation-vi': [721, 373],
