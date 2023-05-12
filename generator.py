@@ -44,7 +44,7 @@ species_egg_group = {}
 forbidden_conditions = ['slot2-ruby', 'slot2-sapphire', 'slot2-emerald', 'slot2-firered', 'slot2-leafgreen']    #conditions that are impossible without another cartridge
 forbidden_evolution_triggers = ['trade']    #evolution triggers that are impossible without another cartridge
 
-limited_locations = ['gift', 'gift-egg', 'only-one', 'pokeflute', 'squirt-bottle', 'wailmer-pail']  #effectively single-encounter, and therefore epic
+limited_methods = ['gift', 'gift-egg', 'only-one', 'pokeflute', 'squirt-bottle', 'wailmer-pail']  #effectively single-encounter, and therefore epic
 limited_items = ['lax-incense', 'luck-incense', 'odd-incense']  #nonrenewable items, and therefore consuming them makes a pokemon at least epic
 
 rare_items = ['dawn-stone', 'shiny-stone', 'dusk-stone', 'kings-rock',  #pickup
@@ -131,6 +131,7 @@ class Version:
 
 version = input("Version: ")
 main_version = None
+backup_version = None
 support_versions = []
 while version:
     version_group = requests.get(f"https://pokeapi.co/api/v2/version/{version}/").json()['version_group']['name']
@@ -138,12 +139,16 @@ while version:
     generation = version_group_details['generation']['name']
     regions = [group['name'] for group in version_group_details['regions']]
 
+    print(version, version_group, generation, regions)
     if main_version == None:
         main_version = Version(version, version_group, generation, regions)
+        version = main_version["backup-sprite-reference"]
+    elif backup_version == None:
+        backup_version = Version(version, version_group, generation, regions)
+        version = input("With help from (leave blank if done): ")
     else:
         support_versions.append(Version(version, version_group, generation, regions))
-    print(version, version_group, generation, regions)
-    version = input("With help from (leave blank if done): ")
+        version = input("With help from (leave blank if done): ")
 
 possible_mons = []
 
@@ -249,7 +254,7 @@ for mon in range(1,species_counts[generation][0]+1):
                 min_level=variation['min_level']
                 max_level=variation['max_level']
                 
-                if variation['method']['name'] in limited_locations:
+                if variation['method']['name'] in limited_methods:
                     display.append([trigger, f"{variation['chance']}% {min_level}-{max_level}"])
                     invalid = False
                     local_rarity = min(EPIC, local_rarity)
@@ -274,12 +279,16 @@ for mon in range(1,species_counts[generation][0]+1):
             route = get_route(encounter['location_area'])['name']
             conditions = [value['name'] for value in variation['condition_values']]
             if (local_rarity == UNCOMMON and versions[main_version.version]['max_chance'] >= 10 and  #common criterion
-                route not in annoying_locations and     #not forced to be uncommon, thanks to special rules/difficulty of arriving at certain location
                 not any(set(conditions) & set(annoying_conditions))):   #not forced to be uncommon, thanks to encounter conditions
                 local_rarity = min(COMMON, local_rarity)
             
             if is_exclusive(mon_name):
                 local_rarity = max(EXOTIC, local_rarity)
+            
+            for location_rarity in main_version["locations"]:
+                print("LOCATION RARITY: " + location_rarity)
+                if get_route(encounter['location_area']) in main_version["locations"][location_rarity]:
+                    max(rarity_value(location_rarity), local_rarity)
             
             display.append([""])
             output = [" ".join(line) for line in display]
@@ -545,13 +554,21 @@ for evolution_chain in range(1,species_counts[generation][1]+1):
     if main_version['breeding']:    #can breed in this game (everything since gen II!)
         reversive_update(current, current, json['baby_trigger_item'])
         recursive_update(current)
-    
+
+def is_url_image(image_url):
+   image_formats = ("image/png", "image/jpeg", "image/jpg")
+   r = requests.head(image_url)
+   if r.headers["content-type"] in image_formats:
+      return True
+   return False
 
 table_builder = Table_Builder("pokedex-table")
 
 for table_entry in table_entries:
     table_entry.push_queue()
     image_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/{main_version.generation}/{main_version.group}/{table_entry.entry_number}.png"
+    if not is_url_image(image_url):
+        image_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/{backup_version.generation}/{backup_version.group}/{table_entry.entry_number}.png"
     if table_entry.rarity == COMMON:
         table_builder.add_item(table_entry.title(), image_url, "Locations", table_entry.details)
         possible_mons.append(table_entry.entry_number)

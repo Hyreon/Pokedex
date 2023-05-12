@@ -1,13 +1,21 @@
 {
+  "backup-sprite-reference": "emerald",
   "items": {
     "fossil-choice": {
       "rarity": "EXOTIC",
       "source": "Fossil choice",
       "list": ["helix-fossil", "dome-fossil"]
+    },
+	"gift": {
+	  "rarity": "EPIC",
+	  "source": "Gift items",
+	  "list": ["old-amber"]
     }
   },
   "no-data": [],
-  "natural-event": ["lugia", "ho-oh", "deoxys"],
+  "locations": {
+    "MYTHIC": ["brith-island", "naval-island"]
+  },
   "giveaways": [],
   "external": {},
   "exclusive-pokemon": {

@@ -46,7 +46,6 @@
     "UNCOMMON": ["great-marsh"]
   },
   "no-data": [],
-  "natural-event": [],
   "giveaways": ["mew", "celebi", "jirachi", "deoxys", "manaphy", "darkrai", "shaymin", "arceus", "pichu"],
   "external": {
     "ranch-boost": {
@@ -56,7 +55,7 @@
     },
     "ranger-egg": {
       "rarity": "MYTHICAL",
-      "manaphy": "Transfer Pokemon Egg from Pokémon Ranger",
+      "label": "Transfer Pokemon Egg from Pokémon Ranger",
       "list": ["manaphy"]
     }
   },
