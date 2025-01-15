@@ -140,10 +140,10 @@ while version:
     regions = [group['name'] for group in version_group_details['regions']]
 
     print(version, version_group, generation, regions)
-    if main_version == None:
+    if main_version is None:
         main_version = Version(version, version_group, generation, regions)
         version = main_version["backup-sprite-reference"]
-    elif backup_version == None:
+    elif backup_version is None:
         backup_version = Version(version, version_group, generation, regions)
         version = input("With help from (leave blank if done): ")
     else:
@@ -154,18 +154,23 @@ possible_mons = []
 
 class Table_Builder:
     def __init__(self, name):
+        self.name = name
         self.row_index = 1
         self.max_columns = 6
         self.lines = []
-        self.lines.append(f"<table class='{name}' style='width: 100%;'>")
-        self.lines.append("<tbody>")
-        self.lines.append("<tr>")
+        self.begin()
+    def begin(self):
+        self.lines.extend(
+            [
+                f"<table class='{self.name}' style='width: 100%;'>",
+                "<tbody>",
+                "<tr>",
+            ]
+        )
     def close(self):
-        self.lines.append("</tr>")
-        self.lines.append("</tbody>")
-        self.lines.append("</table>")
+        self.lines.extend(["</tr>", "</tbody>", "</table>"])
     def export(self, filename):
-        f = open(filename + ".html", "w")
+        f = open(filename + ".html", "w", encoding="utf-8")
         f.write("""<html>
     <head>
 		<link rel="stylesheet" href="style.css">
@@ -174,11 +179,10 @@ class Table_Builder:
         f.write("</html>")
         f.close()
     def add_item(self, title, image, tag, details, color=None, alt=None):
-        if alt == None:
+        if alt is None:
             alt = title
         if self.row_index > self.max_columns:
             self.add_row()
-            self.row_index = 1
         if color is None:
             self.lines.append("<td>")
         else:
@@ -195,8 +199,9 @@ class Table_Builder:
     def add_row(self):
         self.lines.append("</tr>")
         self.lines.append("<tr>")
+        self.row_index = 1
     def add_summary(self):  #TODO
-        self.lines.append(f"<table class='{name}' style='width: 100%;'>")
+        self.lines.append(f"<table class='{self.name}' style='width: 100%;'>")
         self.lines.append("<tbody>")
         self.lines.append("<tr>")
         self.lines.append("</tr>")
@@ -319,10 +324,10 @@ def evolution_difficulty(details):
         
         if method['min_affection']:
             method_rarity = max(method_rarity, COMMON)    #affection is usually easy or cheesable
-            method_conditions.append(f"With affection >= {method['min_affection']}")
+            method_conditions.append(f"With affection ≥ {method['min_affection']}")
         if method['min_happiness']:
             method_rarity = max(method_rarity, COMMON)    #synonym of affection
-            method_conditions.append(f"With happiness >= {method['min_happiness']}")
+            method_conditions.append(f"With happiness ≥ {method['min_happiness']}")
         if method['turn_upside_down']:
             method_rarity = max(method_rarity, COMMON)    #it's not hard, just weird
             method_conditions.append("Turn device upside down")
@@ -356,7 +361,7 @@ def evolution_difficulty(details):
         
         if method['min_beauty']:
             method_rarity = max(method_rarity, RARE)  #milotic, enough said.
-            method_conditions.append(f"With beauty >= {method['min_beauty']}")
+            method_conditions.append(f"With beauty ≥ {method['min_beauty']}")
         
         if method['known_move']:
             method_rarity = max(method_rarity, UNCOMMON)      #lazy base case
@@ -513,7 +518,7 @@ def item_rarity_at_least(rarity, item):
 #FOSSILS
 for mon in main_version['crafting'].keys():
     associated_entry = next(iter([entry for entry in table_entries if entry.name == mon]), None)
-    if associated_entry == None:    #mon does not exist yet
+    if associated_entry is None:    #mon does not exist yet
         continue
     items = main_version['crafting'][mon]
     if any([item_rarity_at_least(IMPOSSIBLE, item) for item in items]):
@@ -531,14 +536,14 @@ for mon in main_version['crafting'].keys():
 for encounter_name,encounter_details in main_version['unlisted-encounters'].items():
     for mon in encounter_details['list']:
         associated_entry = next(iter([entry for entry in table_entries if entry.name == mon]), None)
-        if associated_entry == None:    #mon does not exist yet
+        if associated_entry is None:    #mon does not exist yet
             continue
         associated_entry.update_rarity(rarity_value(encounter_details['rarity']), [encounter_details['label']], 'EXTRANEOUS')
 
 #GIVEAWAYS
 for mon in main_version['giveaways']:
     associated_entry = next(iter([entry for entry in table_entries if entry.name == mon]), None)
-    if associated_entry == None:    #mon does not exist yet
+    if associated_entry is None:    #mon does not exist yet
         continue
     associated_entry.update_rarity(MYTHICAL, ["Event"], 'GIVEAWAY')
 

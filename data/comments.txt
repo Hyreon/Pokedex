@@ -1,0 +1,6 @@
+
+    "roaming-legendary": {
+      "rarity": "EPIC",
+      "label": "Roaming legendary",
+      "list": ["mesprit", "cresselia", "articuno", "zapdos", "moltres"]
+    },

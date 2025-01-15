@@ -1,0 +1,8 @@
+>> Some sections are long and should broken down into smaller functions for readability. Also, this would reduce repetition.
+
+>> Some variable names are not descriptive. json, and the enums are particularly egregious.
+
+>> Errors fetching PokeAPI data are not caught.
+
+Add type hints!
+>> Add comments!

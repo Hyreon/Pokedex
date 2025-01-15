@@ -14,7 +14,8 @@
     "BASIC": ["level-up", "use-item"]
   },
   "locations": {
-    "UNCOMMON": ["kanto-safari-zone", "hoenn-safari-zone", "great-marsh"]
+    "UNCOMMON": ["kanto-safari-zone", "hoenn-safari-zone", "great-marsh"],
+    "EPIC": ["roaming-kanto-area", "roaming-johto-area", "roaming-hoenn-area", "roaming-sinnoh-area"]
   },
   "crafting": {
     "omanyte": ["helix-fossil"],

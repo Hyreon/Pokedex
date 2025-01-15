@@ -1,4 +1,5 @@
 {
+  "backup-sprite-reference": null,
   "items": {
     "single": {
       "rarity": "EPIC",
@@ -48,7 +49,7 @@
     }
   },
   "no-data": [],
-  "natural-event": [],
+  "natural-event": ["darkrai", "shaymin", "arceus", "regigigas"],
   "giveaways": ["mew", "celebi", "jirachi", "deoxys", "manaphy", "darkrai", "shaymin", "arceus", "pichu"],
   "external": {
     "ranch-boost": {
@@ -67,11 +68,6 @@
     "FOSSIL": ["cranidos", "rampardos", "shieldon", "bastiodon"]
   },
   "unlisted-encounters": {
-    "roaming-legendary": {
-      "rarity": "EPIC",
-      "label": "Roaming legendary",
-      "list": ["mesprit", "cresselia", "articuno", "zapdos", "moltres"]
-    },
     "legendary": {
       "rarity": "EPIC",
       "label": "Legendary Encounter",

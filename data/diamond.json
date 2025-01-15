@@ -63,11 +63,6 @@
     "STARTER": ["piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "turtwig", "grotle", "torterra"]
   },
   "unlisted-encounters": {
-    "roaming-legendary": {
-      "rarity": "EPIC",
-      "label": "Roaming legendary",
-      "list": ["mesprit", "cresselia"]
-    },
     "legendary": {
       "rarity": "EPIC",
       "label": "Legendary Encounter",
